@@ -9,7 +9,7 @@ int main()
     FILE *fptr;
     struct timespec time={0,0};
 
-    for (i=0; i<300000; i++) {
+    for (i=0; i<3000000; i++) {
         if( access( "DEST.txt", F_OK ) != -1 ) {
             // file exists
             usleep(1);

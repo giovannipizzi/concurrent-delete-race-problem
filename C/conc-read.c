@@ -19,7 +19,7 @@ int main()
     struct stat finfo;
 
 
-    for (i=0; i<10000; i++) {
+    for (i=0; i<100000; i++) {
         clock_gettime(CLOCK_MONOTONIC, &time);
         printf("BE %18.10f\n", (double)time.tv_sec + 1.0e-9*time.tv_nsec);
         if ((fptr = fopen("DEST.txt","rb")) == NULL){

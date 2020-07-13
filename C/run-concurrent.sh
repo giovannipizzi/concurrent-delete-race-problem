@@ -7,9 +7,17 @@ make || exit 1
 #    mkdir trash
 #fi
 
+FAIL=0
+
 ./conc-delete > del.txt &
 ./conc-read > read.txt &
 
-wait
+for job in `jobs -p`
+do
+echo $job
+    wait $job || let "FAIL+=1"
+done
+
+exit $FAIL
 
 #python ../parse-and-plot.py

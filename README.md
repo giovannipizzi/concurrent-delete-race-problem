@@ -17,4 +17,17 @@ Debugging race problems when opening a file that is being deleted (on Mac OS)
 
     So it seems that when I get zero bytes, it's because `st_ino=0` (pointing to `inode` 0).
 
-- I cannot reproduce the problem with the C code that seems to be doing the same. Note that on `C` the unlinks seem to be much faster.
+- I managed to reproduce the problem **at least once** (but it's hard to reproduce in C)
+  with the C code that seems to be doing the same.
+  Note that on `C` the unlinks seem to be much faster, so I need to run for much longer I think.
+  I got the output: 
+  ```
+  FOUND INSTEAD: ''
+  ER ST_INO: 0
+  ```
+
+## Conclusions
+
+In both cases, the error comes from the fact that the underlying `fopen` call returns an `fd`, but
+this is associated with `st_ino` = 0.
+
