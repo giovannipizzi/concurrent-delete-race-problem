@@ -27,6 +27,7 @@ for i in range(100000):
     except FileNotFoundError:
         print(i, ">> DELETED <<")
         # Recreate the file
+        time.sleep(0.001) # Wait a bit
         with open(dest_fname, 'wb') as fhandle:
             fhandle.write(b'CONTENT')
 
