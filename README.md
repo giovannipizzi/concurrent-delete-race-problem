@@ -50,3 +50,7 @@ Debugging race problems when opening a file that is being deleted (on Mac OS)
 In both cases, the error comes from the fact that the underlying `fopen` call returns an `fd`, but
 this is associated with `st_ino` = 0.
 
+
+## Other information
+
+[I reported this to python](https://bugs.python.org/issue41291)
