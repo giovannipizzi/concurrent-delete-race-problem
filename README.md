@@ -1,2 +1,20 @@
 # concurrent-delete-race-problem
 Debugging race problems when opening a file that is being deleted (on Mac OS)
+
+
+## Notes
+- There is a python version (go in `python` and run `./run-concurrent.sh`, that on Mac almost always raises the following error:
+
+    ```
+    OK- 3 os.stat_result(st_mode=33188, st_ino=8674943678, st_dev=16777220, st_nlink=0, st_uid=501, st_gid=20, st_size=7, st_atime=1594646008, st_mtime=1594646008, st_ctime=1594646008)
+    ER1 3 os.stat_result(st_mode=32768, st_ino=0, st_dev=16777220, st_nlink=1, st_uid=0, st_gid=0, st_size=0, st_atime=0, st_mtime=0, st_ctime=0)
+    Exists: False
+    Traceback (most recent call last):
+    File "test-conc-read.py", line 17, in <module>
+        assert content == b'CONTENT', 'FOUND INSTEAD: {}'.format(content)
+    AssertionError: FOUND INSTEAD: b''
+    ```
+
+    So it seems that when I get zero bytes, it's because `st_ino=0` (pointing to `inode` 0).
+
+- I cannot reproduce the problem with the C code that seems to be doing the same. Note that on `C` the unlinks seem to be much faster.
