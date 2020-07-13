@@ -31,6 +31,7 @@ Debugging race problems when opening a file that is being deleted (on Mac OS)
         fhandle.write(b'CONTENT')
     OSError: [Errno 22] Invalid argument
     ```
+    that is even another race condition that actually shows equally frequently.
 
 - I managed to reproduce the problem **at least once** (but it's hard to reproduce in C)
   with the C code that seems to be doing the same.
