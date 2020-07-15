@@ -53,4 +53,6 @@ this is associated with `st_ino` = 0.
 
 ## Other information
 
-[I reported this to python](https://bugs.python.org/issue41291)
+- [I reported this to python](https://bugs.python.org/issue41291)
+
+- After feedback from the python developers, I also submitted the bug directly to Apple via the `Feedback Assistant` app. I got a feedback number `FB8009608`.
