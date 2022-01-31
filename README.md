@@ -55,4 +55,17 @@ this is associated with `st_ino` = 0.
 
 - [I reported this to python](https://bugs.python.org/issue41291)
 
-- After feedback from the python developers, I also submitted the bug directly to Apple via the `Feedback Assistant` app. I got a feedback number `FB8009608`.
+- After feedback from the python developers, I also submitted the bug directly to Apple via the `Feedback Assistant` app (Jul 202). I got a feedback number `FB8009608`.
+  - In Jan 22 I received an answer from Apple:
+    ```
+    After reviewing your feedback, we have some additional information for you, or some additional information, or action is necessary for this issue: 
+
+    Please verify this issue with macOS 12.2 Release and update your bug report with your results by logging into https://feedbackassistant.apple.com/ or by using the Feedback Assistant app.
+
+    macOS 12.2 Release (21D49)
+    https://developer.apple.com/download/
+    Posted Date: Jan. 26th, 2022
+
+    If the issue persists, please attach a new sysdiagnose captured in the latest build and attach it to the bug report. Thank you.
+    ```
+    (Note: I didn't verify yet if the problem is now fixed in that version of macOS)
